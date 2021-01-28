@@ -9,5 +9,4 @@ public class CuboGatewayApplication {
     public static void main(String[] args) {
         SpringApplication.run(CuboGatewayApplication.class, args);
     }
-
 }
