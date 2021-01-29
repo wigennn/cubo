@@ -20,7 +20,7 @@ public interface UserService {
      * @return
      */
     @GetMapping("/getToken")
-    Response<String> getToken(String userName);
+    Response<String> getToken(String userName, String password);
 
     /**
      * 验真token

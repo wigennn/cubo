@@ -1,6 +1,5 @@
 package com.redbyte.platform.common;
 
-import java.io.Serializable;
 import java.util.HashMap;
 
 /**

@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @GetMapping("/getToken")
-    public Response<String> getToken(String userName) {
+    public Response<String> getToken(String userName, String password) {
         return Response.ok("token");
     }
 
