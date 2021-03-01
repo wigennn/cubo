@@ -1,3 +1,11 @@
+-- 用户表
+-- 角色表
+-- 用户角色关系表
+-- 权限表
+-- 角色权限表
+-- 登陆信息表
+
+
 CREATE TABLE `user` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `user_name` varchar(255) DEFAULT NULL COMMENT '账号',
