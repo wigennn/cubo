@@ -20,10 +20,9 @@ import java.util.List;
 public class MybatisPlusGenerator {
 
     public static void main(String[] args) {
-        String[] tables = {"role"};
+        String[] tables = {"user","role","user_role","login_log"};
 
         String modulePackageName = "cubo-authority-center/authority-center";
-
 
         String projectPath = System.getProperty("user.dir") + "/" + modulePackageName;
         System.out.println(projectPath);
