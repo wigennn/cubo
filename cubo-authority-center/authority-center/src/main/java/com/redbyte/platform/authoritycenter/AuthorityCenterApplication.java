@@ -9,7 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableDiscoveryClient
 @SpringBootApplication
 @EnableFeignClients
-@MapperScan(basePackages = {"com.redbyte.platform.authoritycenter.core.mapper"})
+@MapperScan(basePackages = {"com.redbyte.platform.authoritycenter.core.dao"})
 public class AuthorityCenterApplication {
 
     public static void main(String[] args) {

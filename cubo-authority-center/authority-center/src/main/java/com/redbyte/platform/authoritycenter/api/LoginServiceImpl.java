@@ -1,4 +1,4 @@
-package com.redbyte.platform.authoritycenter.core.service;
+package com.redbyte.platform.authoritycenter.api;
 
 import com.redbyte.platform.authorityapi.service.LoginService;
 import com.redbyte.platform.common.Response;
