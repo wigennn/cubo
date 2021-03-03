@@ -1,4 +1,4 @@
-package com.redbyte.platform.authoritycenter.api;
+package com.redbyte.platform.authoritycenter.micro;
 
 import com.redbyte.platform.authorityapi.service.RoleService;
 import org.springframework.web.bind.annotation.RestController;
@@ -7,5 +7,5 @@ import org.springframework.web.bind.annotation.RestController;
  * @author wangwq
  */
 @RestController
-public class RoleServiceImpl implements RoleService {
+public class RoleServiceFeignImpl implements RoleService {
 }
