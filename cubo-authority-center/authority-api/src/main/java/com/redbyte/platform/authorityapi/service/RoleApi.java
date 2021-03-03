@@ -6,5 +6,5 @@ import org.springframework.cloud.openfeign.FeignClient;
  * @author wangwq
  */
 @FeignClient("authority-center")
-public interface RoleService {
+public interface RoleApi {
 }

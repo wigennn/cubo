@@ -1,6 +1,6 @@
 package com.redbyte.platform.authoritycenter.micro;
 
-import com.redbyte.platform.authorityapi.service.LoginService;
+import com.redbyte.platform.authorityapi.service.LoginApi;
 import com.redbyte.platform.common.Response;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author wangwq
  */
 @RestController
-public class LoginServiceFeignImpl implements LoginService {
+public class LoginApiImpl implements LoginApi {
 
     @Override
     public Response login() {

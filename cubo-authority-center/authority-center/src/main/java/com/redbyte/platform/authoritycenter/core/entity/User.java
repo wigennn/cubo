@@ -2,6 +2,9 @@ package com.redbyte.platform.authoritycenter.core.entity;
 
 import java.time.LocalDateTime;
 import java.io.Serializable;
+import java.util.List;
+
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -91,5 +94,9 @@ public class User implements Serializable {
      */
     private LocalDateTime modifyTime;
 
-
+    /**
+     * 角色
+     */
+    @TableField(exist = false)
+    private List<Role> roles;
 }

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
  * @author wangwq
  */
 @FeignClient("authority-center")
-public interface LoginService {
+public interface LoginApi {
 
     @PostMapping("/login")
     Response login();
