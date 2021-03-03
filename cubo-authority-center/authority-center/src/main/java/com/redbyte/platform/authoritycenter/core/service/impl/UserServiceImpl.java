@@ -10,6 +10,7 @@ import com.redbyte.platform.authoritycenter.core.service.IUserRoleService;
 import com.redbyte.platform.authoritycenter.core.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,6 +32,13 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     private IUserRoleService userRoleService;
     @Autowired
     private IRoleService roleService;
+
+    @Override
+    public User saveUserInfo(User user) throws Exception {
+        user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
+        this.save(user);
+        return user;
+    }
 
     @Override
     public User findByUserName(String userName) throws Exception {

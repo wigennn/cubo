@@ -13,5 +13,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IUserService extends IService<User> {
 
+    User saveUserInfo(User user) throws Exception;
+
     User findByUserName(String userName) throws Exception;
 }

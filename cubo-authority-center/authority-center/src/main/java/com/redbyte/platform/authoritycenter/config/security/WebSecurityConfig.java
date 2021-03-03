@@ -31,22 +31,22 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(myUserDetailService);
+        auth.userDetailsService(myUserDetailService).passwordEncoder(passwordEncoder());
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        super.configure(http);
-        http.authorizeRequests()
+        http.cors().and()
+                .authorizeRequests()
+                .antMatchers("/login","/register/**","/welcome", "/api/healthCheck/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login")
                 .failureUrl("/login?error")
                 .permitAll()
                 .and()
-                .logout()
-                .permitAll()
+                .logout().permitAll().and()
+                .csrf().disable()
         ;
     }
 }

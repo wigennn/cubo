@@ -1,22 +1,24 @@
 package com.redbyte.platform.authoritycenter.controller;
 
+import com.redbyte.platform.authoritycenter.core.entity.User;
 import com.redbyte.platform.common.Response;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * <p>
+ *
+ * </p>
+ *
  * @author wangwq
  */
 @RestController
-public class WelcomeController {
+@RequestMapping("/register")
+public class RegisterController {
 
-    @RequestMapping("/welcome")
-    public Response<String> welcome() {
-        return new Response<String>("welcome");
-    }
+    @RequestMapping("/save")
+    public Response<User> save() {
 
-    @RequestMapping("/loginTest")
-    public Response<String> loginTest() {
-        return new Response<>("loginTest");
+        return new Response<>();
     }
 }

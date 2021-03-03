@@ -44,6 +44,10 @@ public class Response<T> extends HashMap<String, Object> {
         return new Response(data);
     }
 
+    public static Response error(String msg) {
+        return new Response("500", msg);
+    }
+
     public static Response error(String code, String msg) {
         return new Response(code, msg);
     }
