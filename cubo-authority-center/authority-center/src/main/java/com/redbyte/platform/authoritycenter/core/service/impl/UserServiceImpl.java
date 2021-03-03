@@ -12,7 +12,9 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -46,8 +48,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         User user = this.getOne(new QueryWrapper<User>().lambda()
                 .eq(User::getAccount, userName));
 
-        List<Role> roles = queryUserRoles(user.getId());
-        user.setRoles(roles);
+        if (user != null) {
+            List<Role> roles = queryUserRoles(user.getId());
+            user.setRoles(roles);
+        }
 
         return user;
     }
@@ -56,8 +60,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
         List<UserRole> userRoleList = userRoleService.list(new QueryWrapper<UserRole>().lambda()
                 .eq(UserRole::getUserId, userId));
+        if (CollectionUtils.isEmpty(userRoleList)) {
+            return null;
+        }
         Set<Long> roleIds = userRoleList.stream()
                 .map(UserRole::getRoleId).collect(Collectors.toSet());
+
         List<Role> roles = roleService.list(new QueryWrapper<Role>().lambda().in(Role::getId, roleIds));
 
         return roles;

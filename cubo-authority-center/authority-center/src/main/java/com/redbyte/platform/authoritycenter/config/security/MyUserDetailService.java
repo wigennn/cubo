@@ -42,7 +42,7 @@ public class MyUserDetailService implements UserDetailsService {
         }
 
         List<SimpleGrantedAuthority> authorityList = new ArrayList<>();
-        user.getRoles().forEach(role -> {
+        user.getRoles().stream().forEach(role -> {
             authorityList.add(new SimpleGrantedAuthority(role.getName()));
         });
 
