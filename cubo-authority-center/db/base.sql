@@ -4,7 +4,7 @@ create table `user`(
   `id` bigint(20) NOT NULL COMMENT '主键',
   `account` varchar(150) CHARACTER SET utf8 DEFAULT '' COMMENT '账号',
   `name` varchar(60) CHARACTER SET utf8 DEFAULT '' COMMENT '姓名',
-  `password` varchar(32) CHARACTER SET utf8 NOT NULL DEFAULT '0' COMMENT '密码',
+  `password` varchar(100) CHARACTER SET utf8 NOT NULL DEFAULT '0' COMMENT '密码',
   `salt` varchar(10) DEFAULT NULL COMMENT '盐',
   `phone` varchar(16) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT '手机号',
   `email` varchar(60) CHARACTER SET utf8 DEFAULT '' COMMENT '邮箱',
