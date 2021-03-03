@@ -1,5 +1,6 @@
 package com.redbyte.platform.authoritycenter.config.security;
 
+import com.redbyte.platform.authoritycenter.core.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
@@ -17,13 +18,24 @@ import java.util.List;
  * @author wangwq
  */
 @Data
-@AllArgsConstructor
 public class LoginUserDetail implements UserDetails {
+
+    private static final long serialVersionUID = -5393953160563006455L;
 
     private List<SimpleGrantedAuthority> authorities;
     private String password;
     private String userName;
 
+    private String token;
+    private User user;
+    private Long expireTime;
+
+
+    LoginUserDetail(List<SimpleGrantedAuthority> authorities, String password, String userName) {
+        this.authorities = authorities;
+        this.password = password;
+        this.userName = userName;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
