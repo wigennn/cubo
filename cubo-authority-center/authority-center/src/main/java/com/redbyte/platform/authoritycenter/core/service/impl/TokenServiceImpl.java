@@ -79,6 +79,13 @@ public class TokenServiceImpl implements TokenService {
         return false;
     }
 
+    @Override
+    public void delLoginUser(String loginUserToken) throws Exception {
+        if (StringUtils.isEmpty(loginUserToken)) {
+            String userKey = getUserKey(loginUserToken);
+            redisCache.deleteObject(userKey);
+        }
+    }
 
     private String createToken(Map<String, Object> claims) {
         return Jwts.builder().setClaims(claims)
