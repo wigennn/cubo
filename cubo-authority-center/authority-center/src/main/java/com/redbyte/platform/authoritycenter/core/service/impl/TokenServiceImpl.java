@@ -1,5 +1,6 @@
 package com.redbyte.platform.authoritycenter.core.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.redbyte.platform.authoritycenter.common.Constants;
 import com.redbyte.platform.authoritycenter.config.security.LoginUserDetail;
 import com.redbyte.platform.authoritycenter.core.service.TokenService;
@@ -97,7 +98,7 @@ public class TokenServiceImpl implements TokenService {
         String userKey = getUserKey(loginUserDetail.getToken());
         loginUserDetail.setExpireTime(System.currentTimeMillis() + Long.valueOf(tokenExpireTime));
 
-        redisCache.setCacheObject(userKey, loginUserDetail, Integer.parseInt(tokenExpireTime), TimeUnit.MILLISECONDS);
+        redisCache.setCacheObject(userKey, JSON.toJSONString(loginUserDetail), Integer.parseInt(tokenExpireTime), TimeUnit.MILLISECONDS);
     }
 
     private Claims parseToken(String token) {

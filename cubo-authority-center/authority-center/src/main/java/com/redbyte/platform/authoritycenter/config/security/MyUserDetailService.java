@@ -49,7 +49,7 @@ public class MyUserDetailService implements UserDetailsService {
             });
         }
 
-        return new LoginUserDetail(authorityList, user.getPassword(), user.getAccount());
+        return new LoginUserDetail(authorityList, user.getPassword(), user.getAccount(), user);
     }
 
 }

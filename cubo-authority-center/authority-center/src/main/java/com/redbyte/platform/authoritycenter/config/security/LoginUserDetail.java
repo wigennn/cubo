@@ -31,10 +31,11 @@ public class LoginUserDetail implements UserDetails {
     private Long expireTime;
 
 
-    LoginUserDetail(List<SimpleGrantedAuthority> authorities, String password, String userName) {
+    LoginUserDetail(List<SimpleGrantedAuthority> authorities, String password, String userName, User user) {
         this.authorities = authorities;
         this.password = password;
         this.userName = userName;
+        this.user = user;
     }
 
     @Override

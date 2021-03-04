@@ -29,7 +29,7 @@ public class Response<T> extends HashMap<String, Object> {
         super.put(DATA_TAG, data);
     }
 
-    public Response(String code, String msg) {
+    public Response(String code, Object msg) {
         super.put(CODE_TAG, code);
         super.put(MSG_TAG, msg);
     }
@@ -40,11 +40,15 @@ public class Response<T> extends HashMap<String, Object> {
         super.put(DATA_TAG, data);
     }
 
+    public static <T> Response ok() {
+        return new Response();
+    }
+
     public static <T> Response ok(T data) {
         return new Response(data);
     }
 
-    public static Response error(String msg) {
+    public static Response error(Object msg) {
         return new Response("500", msg);
     }
 
