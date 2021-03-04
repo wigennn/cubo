@@ -15,7 +15,5 @@ import java.util.List;
 public class RedisClusterConfigProperties {
 
     private List<String> nodes;
-    private Integer maxAttempts;
-    private Integer connectionTime;
-    private String password;
+    private Integer maxRedirects;
 }
