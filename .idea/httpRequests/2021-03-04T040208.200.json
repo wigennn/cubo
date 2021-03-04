@@ -1,0 +1,4 @@
+{
+  "msg": "No more cluster attempts left.; nested exception is redis.clients.jedis.exceptions.JedisClusterMaxAttemptsException: No more cluster attempts left.",
+  "code": "500"
+}
