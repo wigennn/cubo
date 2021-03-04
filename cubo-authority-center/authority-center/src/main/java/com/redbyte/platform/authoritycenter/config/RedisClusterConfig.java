@@ -35,6 +35,8 @@ public class RedisClusterConfig extends CachingConfigurerSupport {
         StringRedisTemplate redisTemplate = new StringRedisTemplate();
         redisTemplate.setConnectionFactory(redisConnectionFactory);
         redisTemplate.setKeySerializer(new StringRedisSerializer());
+        redisTemplate.setValueSerializer(new StringRedisSerializer());
+        redisTemplate.afterPropertiesSet();
         return redisTemplate;
     }
 }
