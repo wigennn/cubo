@@ -1,6 +1,6 @@
 package com.redbyte.platform.authoritycenter;
 
-import com.redbyte.platform.authoritycenter.config.RedisClusterConfigProperties;
+import com.redbyte.platform.authoritycenter.config.redis.RedisClusterConfigProperties;
 import com.redbyte.platform.authoritycenter.core.service.RegisterService;
 import com.redbyte.platform.authoritycenter.domain.RegisterUserDTO;
 import org.junit.jupiter.api.Test;
@@ -59,7 +59,7 @@ class AuthorityCenterApplicationTests {
 
     @Test
     void testRedis() {
-        Jedis jedis = new Jedis("139.196.205.76",7001);
+        Jedis jedis = new Jedis("127.0.0.1",6379);
         jedis.get("wigen");
     }
 }
