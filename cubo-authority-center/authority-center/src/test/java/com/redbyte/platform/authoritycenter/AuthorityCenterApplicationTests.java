@@ -29,23 +29,6 @@ class AuthorityCenterApplicationTests {
     }
 
     @Test
-    void registerUserTest() {
-        try {
-            RegisterUserDTO registerUserDTO = new RegisterUserDTO();
-            registerUserDTO.setUserName("13151559017");
-            registerUserDTO.setName("王伟庆");
-            registerUserDTO.setEmail("wigen96@163.com");
-            registerUserDTO.setPassword("123456");
-            registerUserDTO.setPhone("13151559017");
-
-            registerService.save(registerUserDTO);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-
-    @Test
     void testRedisCluster() {
         Set<HostAndPort> nodes = new HashSet<>();
         for (String item : redisClusterConfigProperties.getNodes()) {
@@ -61,5 +44,17 @@ class AuthorityCenterApplicationTests {
     void testRedis() {
         Jedis jedis = new Jedis("127.0.0.1",6379);
         jedis.get("wigen");
+    }
+
+
+    @Test
+    void registerTest() throws Exception {
+        RegisterUserDTO registerUserDTO = new RegisterUserDTO();
+        registerUserDTO.setUserName("12345678901");
+        registerUserDTO.setName("谢飞机");
+        registerUserDTO.setPassword("123456");
+        registerUserDTO.setPhone("12345678901");
+        registerUserDTO.setGender(1);
+        registerService.save(registerUserDTO);
     }
 }

@@ -12,7 +12,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author wangwq
- * @since 2021-03-03
+ * @since 2021-03-06
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -57,24 +57,9 @@ public class LoginLog implements Serializable {
     private Integer terminal;
 
     /**
-     * 创建人
-     */
-    private Long creator;
-
-    /**
      * 创建时间
      */
     private LocalDateTime createTime;
-
-    /**
-     * 修改人
-     */
-    private Long modifier;
-
-    /**
-     * 修改时间
-     */
-    private LocalDateTime modifyTime;
 
     /**
      * 操作记录

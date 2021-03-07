@@ -20,7 +20,7 @@ import java.util.List;
 public class MybatisPlusGenerator {
 
     public static void main(String[] args) {
-        String[] tables = {"user","role","user_role","login_log"};
+        String[] tables = {"login_log"};
 
         String modulePackageName = "cubo-authority-center/authority-center";
 
@@ -34,6 +34,7 @@ public class MybatisPlusGenerator {
         globalConfig.setEnableCache(false);
         globalConfig.setBaseResultMap(true);
         globalConfig.setBaseColumnList(true);
+        globalConfig.setFileOverride(true);
 
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
         dataSourceConfig.setUrl("jdbc:mysql://localhost:3306/cubo?autoReconnect=true&useUnicode=true&createDatabaseIfNotExist=true&characterEncoding=utf8&useSSL=true&serverTimezone=UTC");

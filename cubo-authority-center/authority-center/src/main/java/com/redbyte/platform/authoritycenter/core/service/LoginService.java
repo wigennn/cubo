@@ -1,5 +1,7 @@
 package com.redbyte.platform.authoritycenter.core.service;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * <p>
  *
@@ -9,5 +11,5 @@ package com.redbyte.platform.authoritycenter.core.service;
  */
 public interface LoginService {
 
-    String login(String userName, String password) throws Exception;
+    String login(String userName, String password, HttpServletRequest request) throws Exception;
 }
