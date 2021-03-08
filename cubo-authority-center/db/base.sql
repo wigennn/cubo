@@ -55,13 +55,10 @@ create table `login_log`(
   `user_id` bigint(20) NOT NULL COMMENT '用户id',
   `user_name` varchar(60) NOT NULL COMMENT '用户姓名',
   `ip_address` varchar(100) NOT NULL COMMENT '用户IP地址',
-  `source` smallint(6) NOT NULL COMMENT '来源',
-  `login_time` datetime NOT NULL COMMENT '登录时间',
-  `terminal` smallint(6) NOT NULL COMMENT '终端设备',
-  `creator` bigint(20) NOT NULL COMMENT '创建人',
-  `create_time` datetime NOT NULL COMMENT '创建时间',
-  `modifier` bigint(20) NOT NULL COMMENT '修改人',
-  `modify_time` datetime NOT NULL COMMENT '修改时间',
+  `source` smallint(6) DEFAULT '0' COMMENT '来源',
+  `login_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '登录时间',
+  `terminal` smallint(6) DEFAULT '0' COMMENT '终端设备',
+  `create_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `operation_record` varchar(100) NOT NULL COMMENT '操作记录',
   PRIMARY KEY (`id`)
 )ENGINE=Innodb DEFAULT CHARSET=utf8mb4 COMMENT '登陆日志表';

@@ -1,4 +1,4 @@
-package com.redbyte.platform.authoritycenter.config;
+package com.redbyte.platform.authoritycenter.config.redis;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

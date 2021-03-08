@@ -11,16 +11,13 @@
         <result column="source" property="source" />
         <result column="login_time" property="loginTime" />
         <result column="terminal" property="terminal" />
-        <result column="creator" property="creator" />
         <result column="create_time" property="createTime" />
-        <result column="modifier" property="modifier" />
-        <result column="modify_time" property="modifyTime" />
         <result column="operation_record" property="operationRecord" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, user_id, user_name, ip_address, source, login_time, terminal, creator, create_time, modifier, modify_time, operation_record
+        id, user_id, user_name, ip_address, source, login_time, terminal, create_time, operation_record
     </sql>
 
 </mapper>
