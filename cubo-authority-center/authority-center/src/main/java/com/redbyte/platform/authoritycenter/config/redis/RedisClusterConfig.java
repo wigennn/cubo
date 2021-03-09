@@ -24,7 +24,7 @@ public class RedisClusterConfig extends CachingConfigurerSupport {
     @Bean
     public RedisClusterConfiguration redisClusterConfiguration() {
         RedisClusterConfiguration configuration = new RedisClusterConfiguration(redisClusterConfigProperties.getNodes());
-        configuration.setMaxRedirects(redisClusterConfigProperties.getMaxAttempts());
+//        configuration.setMaxRedirects(redisClusterConfigProperties.getMaxAttempts());
         return configuration;
     }
 
