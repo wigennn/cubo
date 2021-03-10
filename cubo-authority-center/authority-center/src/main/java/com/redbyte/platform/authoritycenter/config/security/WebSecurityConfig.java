@@ -45,7 +45,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and()
                 .authorizeRequests()
-                .antMatchers("/login","/loginCheck","/register/**","/welcome", "/api/healthCheck/**").permitAll()
+                .antMatchers("/login","/loginCheck","/register/**","/welcome", "/api/healthCheck/**", "/actuator/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
