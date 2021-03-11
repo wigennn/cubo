@@ -16,8 +16,8 @@ public class WelcomeController {
 
     @RequestMapping("/welcome")
     public Response<String> welcome(HttpServletRequest request) {
-        log.info("请求ip: {}, port: {}", request.getRemoteHost(), request.getRemotePort());
-        return new Response<String>("welcome");
+//        log.info("请求ip: {}, port: {}", request.getRemoteHost(), request.getRemotePort());
+        return null;
     }
 
     @RequestMapping("/loginTest")
