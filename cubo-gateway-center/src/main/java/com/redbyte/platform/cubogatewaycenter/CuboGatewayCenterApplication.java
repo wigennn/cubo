@@ -5,9 +5,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 
 @EnableDiscoveryClient
 @SpringBootApplication
+@ComponentScan({"com.redbyte.platform.authorityapi.service"})
 public class CuboGatewayCenterApplication {
 
     public static void main(String[] args) {
@@ -18,10 +20,10 @@ public class CuboGatewayCenterApplication {
      * 路由
      * @return
      */
-    @Bean
-    public RouteLocator routeLocator() {
-        return null;
-    }
+//    @Bean
+//    public RouteLocator routeLocator() {
+//        return null;
+//    }
 
     /**
      * 限流
