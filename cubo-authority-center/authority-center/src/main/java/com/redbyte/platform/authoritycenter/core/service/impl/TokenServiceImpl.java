@@ -81,6 +81,18 @@ public class TokenServiceImpl implements TokenService {
     }
 
     @Override
+    public boolean verifyToken(String token) throws Exception {
+
+        // 解析token
+        Claims claims = parseToken(token);
+        String uuid = (String) claims.get(Constants.LOGIN_USER_KEY);
+        String userKey = getUserKey(uuid);
+        LoginUserDetail loginUserDetail = redisCache.getCacheObject(userKey);
+
+        return verifyToken(loginUserDetail);
+    }
+
+    @Override
     public void delLoginUser(String loginUserToken) throws Exception {
         if (StringUtils.isEmpty(loginUserToken)) {
             String userKey = getUserKey(loginUserToken);

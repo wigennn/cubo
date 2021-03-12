@@ -19,5 +19,7 @@ public interface TokenService {
 
     boolean verifyToken(LoginUserDetail loginUserDetail) throws Exception;
 
+    boolean verifyToken(String token) throws Exception;
+
     void delLoginUser(String loginUserToken) throws Exception;
 }

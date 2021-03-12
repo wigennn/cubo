@@ -9,6 +9,7 @@ import java.util.HashMap;
  *
  * @author wangwq
  */
+
 public class Response<T> extends HashMap<String, Object> {
     private static final long serialVersionUID = 5793462573209575823L;
 
@@ -17,24 +18,32 @@ public class Response<T> extends HashMap<String, Object> {
     private static final String DATA_TAG = "data";
 
     private String code;
-    private String msg;
+    private Object msg;
     private T data;
 
     public Response() {
+        this.code = ResponseCode.OK;
         super.put(CODE_TAG, ResponseCode.OK);
     }
 
     public Response(T data) {
+        this.code = ResponseCode.OK;
+        this.data = data;
         super.put(CODE_TAG, ResponseCode.OK);
         super.put(DATA_TAG, data);
     }
 
     public Response(String code, Object msg) {
+        this.code = code;
+        this.msg = msg;
         super.put(CODE_TAG, code);
         super.put(MSG_TAG, msg);
     }
 
     public Response(String code, String msg, T data) {
+        this.code = code;
+        this.msg = msg;
+        this.data = data;
         super.put(CODE_TAG, code);
         super.put(MSG_TAG, msg);
         super.put(DATA_TAG, data);
@@ -54,5 +63,29 @@ public class Response<T> extends HashMap<String, Object> {
 
     public static Response error(String code, String msg) {
         return new Response(code, msg);
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public Object getMsg() {
+        return msg;
+    }
+
+    public void setMsg(Object msg) {
+        this.msg = msg;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
     }
 }
