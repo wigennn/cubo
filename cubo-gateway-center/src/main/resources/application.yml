@@ -18,7 +18,6 @@ spring:
               args:
                 name: fallback
                 fallbackUri:forward:/fallback
-  hystrix.command.fallback.execution.isolation.thread.timeoutInMilliseconds: 5000
   redis:
     host: localhost
     port: 6379
